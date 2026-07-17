@@ -6,6 +6,7 @@ import {
   FileText,
   Mail,
   PenTool,
+  Play,
   Presentation,
   Sheet,
   Sparkles,
@@ -42,6 +43,118 @@ const workItems = [
     title: "Packaging",
     kind: "Product mockup",
     image: "/work/packaging.png",
+  },
+];
+
+type ShowcaseItem =
+  | {
+      type: "image";
+      title: string;
+      kind: string;
+      image: string;
+      width: number;
+      height: number;
+    }
+  | {
+      type: "video";
+      title: string;
+      kind: string;
+      src: string;
+      poster: string;
+      width: number;
+      height: number;
+    };
+
+const showcaseItems: ShowcaseItem[] = [
+  {
+    type: "video",
+    title: "Tumbler Product Reel",
+    kind: "Short-form video",
+    src: "/work/tumbler-reel.mp4",
+    poster: "/work/tumbler-reel-poster.jpg",
+    width: 1280,
+    height: 720,
+  },
+  {
+    type: "video",
+    title: "Skincare UGC Ad",
+    kind: "Short-form video",
+    src: "/work/ugc-ad.mp4",
+    poster: "/work/ugc-ad-poster.jpg",
+    width: 720,
+    height: 1280,
+  },
+  {
+    type: "image",
+    title: "Start YouTube With $0",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-start-youtube.png",
+    width: 1672,
+    height: 941,
+  },
+  {
+    type: "image",
+    title: "He Can't Say No!",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-cant-say-no.png",
+    width: 1536,
+    height: 1024,
+  },
+  {
+    type: "image",
+    title: "Italian Café Menu",
+    kind: "Menu design",
+    image: "/work/italian-menu.png",
+    width: 1024,
+    height: 1536,
+  },
+  {
+    type: "image",
+    title: "Pilates: Glutes & Core",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-pilates.png",
+    width: 1672,
+    height: 941,
+  },
+  {
+    type: "image",
+    title: "1st Birthday Invite",
+    kind: "Event invitation",
+    image: "/work/birthday-invite.png",
+    width: 941,
+    height: 1672,
+  },
+  {
+    type: "image",
+    title: "First Words!",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-first-words.png",
+    width: 1672,
+    height: 941,
+  },
+  {
+    type: "image",
+    title: "iPhone 17 Pro Max",
+    kind: "Product poster",
+    image: "/work/iphone-poster.png",
+    width: 1055,
+    height: 1491,
+  },
+  {
+    type: "image",
+    title: "1 Day, $1 Challenge",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-1day-1dollar.png",
+    width: 1672,
+    height: 941,
+  },
+  {
+    type: "image",
+    title: "Plumbing Services Flyer",
+    kind: "Promo poster",
+    image: "/work/plumbing-flyer.png",
+    width: 1122,
+    height: 1402,
   },
 ];
 
@@ -216,6 +329,47 @@ export default function Home() {
                 height={700}
                 sizes="(max-width: 760px) 100vw, (max-width: 1120px) 50vw, 33vw"
               />
+              <div className="work-meta">
+                <p>{item.kind}</p>
+                <h3>{item.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section showcase-section" id="more-work">
+        <div className="section-heading">
+          <p className="section-kicker">More work</p>
+          <h2>Thumbnails, posters, menus, and short-form video.</h2>
+        </div>
+        <div className="showcase-grid">
+          {showcaseItems.map((item) => (
+            <article className="work-card showcase-card" key={item.title}>
+              {item.type === "video" ? (
+                <div className="video-frame">
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    style={{ aspectRatio: `${item.width} / ${item.height}` }}
+                  />
+                  <span className="video-badge">
+                    <Play size={12} aria-hidden="true" />
+                    Video
+                  </span>
+                </div>
+              ) : (
+                <Image
+                  src={item.image}
+                  alt={`${item.title} — ${item.kind}`}
+                  width={item.width}
+                  height={item.height}
+                  sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+                />
+              )}
               <div className="work-meta">
                 <p>{item.kind}</p>
                 <h3>{item.title}</h3>
