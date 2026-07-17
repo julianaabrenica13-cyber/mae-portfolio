@@ -46,28 +46,8 @@ const workItems = [
   },
 ];
 
-type ShowcaseItem =
-  | {
-      type: "image";
-      title: string;
-      kind: string;
-      image: string;
-      width: number;
-      height: number;
-    }
-  | {
-      type: "video";
-      title: string;
-      kind: string;
-      src: string;
-      poster: string;
-      width: number;
-      height: number;
-    };
-
-const showcaseItems: ShowcaseItem[] = [
+const reels = [
   {
-    type: "video",
     title: "Tumbler Product Reel",
     kind: "Short-form video",
     src: "/work/tumbler-reel.mp4",
@@ -76,7 +56,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 720,
   },
   {
-    type: "video",
     title: "Skincare UGC Ad",
     kind: "Short-form video",
     src: "/work/ugc-ad.mp4",
@@ -84,8 +63,10 @@ const showcaseItems: ShowcaseItem[] = [
     width: 720,
     height: 1280,
   },
+];
+
+const showcaseItems = [
   {
-    type: "image",
     title: "Start YouTube With $0",
     kind: "YouTube thumbnail",
     image: "/work/yt-start-youtube.png",
@@ -93,7 +74,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 941,
   },
   {
-    type: "image",
     title: "He Can't Say No!",
     kind: "YouTube thumbnail",
     image: "/work/yt-cant-say-no.png",
@@ -101,7 +81,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 1024,
   },
   {
-    type: "image",
     title: "Italian Café Menu",
     kind: "Menu design",
     image: "/work/italian-menu.png",
@@ -109,7 +88,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 1536,
   },
   {
-    type: "image",
     title: "Pilates: Glutes & Core",
     kind: "YouTube thumbnail",
     image: "/work/yt-pilates.png",
@@ -117,7 +95,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 941,
   },
   {
-    type: "image",
     title: "1st Birthday Invite",
     kind: "Event invitation",
     image: "/work/birthday-invite.png",
@@ -125,7 +102,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 1672,
   },
   {
-    type: "image",
     title: "First Words!",
     kind: "YouTube thumbnail",
     image: "/work/yt-first-words.png",
@@ -133,7 +109,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 941,
   },
   {
-    type: "image",
     title: "iPhone 17 Pro Max",
     kind: "Product poster",
     image: "/work/iphone-poster.png",
@@ -141,7 +116,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 1491,
   },
   {
-    type: "image",
     title: "1 Day, $1 Challenge",
     kind: "YouTube thumbnail",
     image: "/work/yt-1day-1dollar.png",
@@ -149,7 +123,6 @@ const showcaseItems: ShowcaseItem[] = [
     height: 941,
   },
   {
-    type: "image",
     title: "Plumbing Services Flyer",
     kind: "Promo poster",
     image: "/work/plumbing-flyer.png",
@@ -220,8 +193,8 @@ export default function Home() {
 
       <section className="hero" id="top" aria-label="Juliana Abrenica portfolio">
         <Image
-          src="/work/store-banner.png"
-          alt="Ice cream shop campaign banner sample"
+          src="/work/hero-cover.png"
+          alt="Juliana Abrenica creative editing workspace illustration"
           fill
           priority
           sizes="100vw"
@@ -249,6 +222,37 @@ export default function Home() {
               Email Me
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="section reel-section" aria-label="Featured video reels">
+        <div className="section-heading">
+          <p className="section-kicker">Featured</p>
+          <h2>Short-form video reels.</h2>
+        </div>
+        <div className="reel-row">
+          {reels.map((reel) => (
+            <article className="reel-card" key={reel.title}>
+              <div className="video-frame">
+                <video
+                  src={reel.src}
+                  poster={reel.poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  style={{ aspectRatio: `${reel.width} / ${reel.height}` }}
+                />
+                <span className="video-badge">
+                  <Play size={12} aria-hidden="true" />
+                  Video
+                </span>
+              </div>
+              <div className="work-meta">
+                <p>{reel.kind}</p>
+                <h3>{reel.title}</h3>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -346,30 +350,13 @@ export default function Home() {
         <div className="showcase-grid">
           {showcaseItems.map((item) => (
             <article className="work-card showcase-card" key={item.title}>
-              {item.type === "video" ? (
-                <div className="video-frame">
-                  <video
-                    src={item.src}
-                    poster={item.poster}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    style={{ aspectRatio: `${item.width} / ${item.height}` }}
-                  />
-                  <span className="video-badge">
-                    <Play size={12} aria-hidden="true" />
-                    Video
-                  </span>
-                </div>
-              ) : (
-                <Image
-                  src={item.image}
-                  alt={`${item.title} — ${item.kind}`}
-                  width={item.width}
-                  height={item.height}
-                  sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
-                />
-              )}
+              <Image
+                src={item.image}
+                alt={`${item.title} — ${item.kind}`}
+                width={item.width}
+                height={item.height}
+                sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+              />
               <div className="work-meta">
                 <p>{item.kind}</p>
                 <h3>{item.title}</h3>

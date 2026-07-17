@@ -24,6 +24,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 0.92rem;
 }
 
 a {
@@ -70,7 +71,7 @@ nav {
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 999px;
   background: rgba(23, 21, 20, 0.34);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 700;
   backdrop-filter: blur(14px);
 }
@@ -95,8 +96,13 @@ nav {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(23, 21, 20, 0.82), rgba(23, 21, 20, 0.38) 48%, rgba(23, 21, 20, 0.08)),
-    linear-gradient(0deg, rgba(23, 21, 20, 0.7), rgba(23, 21, 20, 0) 52%);
+    linear-gradient(
+      90deg,
+      rgba(23, 21, 20, 0.85) 0%,
+      rgba(23, 21, 20, 0.62) 30%,
+      rgba(23, 21, 20, 0.14) 54%,
+      rgba(23, 21, 20, 0) 72%
+    );
 }
 
 .hero-content {
@@ -112,7 +118,7 @@ nav {
   gap: 8px;
   margin: 0 0 16px;
   color: var(--coral);
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -139,17 +145,17 @@ h2 {
 
 h1 {
   max-width: 12ch;
-  font-size: clamp(4.2rem, 12vw, 10.5rem);
+  font-size: clamp(2.9rem, 8vw, 6.4rem);
 }
 
 h2 {
   max-width: 980px;
-  font-size: clamp(2.35rem, 6vw, 5.4rem);
+  font-size: clamp(1.75rem, 4vw, 3.4rem);
 }
 
 h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 0.94rem;
   line-height: 1.2;
   letter-spacing: 0;
 }
@@ -161,7 +167,7 @@ p {
 .hero-copy {
   width: min(660px, 100%);
   margin: 22px 0 0;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-size: clamp(0.9rem, 1.4vw, 1.08rem);
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -220,13 +226,13 @@ p {
 }
 
 .intro-grid h2 {
-  font-size: clamp(2rem, 4.5vw, 4.1rem);
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
 }
 
 .intro-grid p:last-child {
   margin: 0;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 0.96rem;
 }
 
 .section {
@@ -302,7 +308,7 @@ p {
 .case-copy p:not(.section-kicker) {
   max-width: 620px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 1.08rem;
+  font-size: 0.96rem;
 }
 
 .case-points {
@@ -317,7 +323,7 @@ p {
   border-radius: 999px;
   padding: 10px 13px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-weight: 800;
 }
 
@@ -358,7 +364,7 @@ p {
 .work-meta p {
   margin: 0 0 6px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -420,6 +426,37 @@ p {
   backdrop-filter: blur(8px);
 }
 
+.reel-section {
+  max-width: 1320px;
+  padding-top: clamp(48px, 7vw, 96px);
+  padding-bottom: clamp(48px, 7vw, 96px);
+}
+
+.reel-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.reel-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.reel-card .video-frame {
+  display: block;
+}
+
+.reel-card video {
+  display: block;
+  height: min(56vh, 460px);
+  width: auto;
+  max-width: 100%;
+}
+
 .workflow {
   display: grid;
   grid-template-columns: minmax(0, 0.76fr) minmax(320px, 1fr);
@@ -429,7 +466,7 @@ p {
 }
 
 .workflow-copy h2 {
-  font-size: clamp(2.1rem, 5vw, 4.5rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.9rem);
 }
 
 .process-list {
@@ -450,7 +487,7 @@ p {
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
   color: var(--muted);
-  font-size: 1.06rem;
+  font-size: 0.94rem;
   line-height: 1.55;
 }
 
@@ -478,13 +515,13 @@ p {
 }
 
 .contact h2 {
-  font-size: clamp(2.3rem, 5.2vw, 5rem);
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
 }
 
 .contact p {
   max-width: 660px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 1.06rem;
+  font-size: 0.96rem;
 }
 
 footer {
@@ -495,7 +532,7 @@ footer {
   padding: 24px clamp(20px, 5vw, 72px);
   background: #0f0d0c;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .footer-mark {
@@ -554,8 +591,12 @@ footer p {
 
   .hero-scrim {
     background:
-      linear-gradient(90deg, rgba(23, 21, 20, 0.86), rgba(23, 21, 20, 0.42)),
-      linear-gradient(0deg, rgba(23, 21, 20, 0.74), rgba(23, 21, 20, 0) 48%);
+      linear-gradient(
+        90deg,
+        rgba(23, 21, 20, 0.88) 0%,
+        rgba(23, 21, 20, 0.6) 48%,
+        rgba(23, 21, 20, 0.32) 100%
+      );
   }
 
   .hero-actions,
@@ -575,6 +616,15 @@ footer p {
 
   .showcase-grid {
     columns: 1;
+  }
+
+  .reel-card {
+    width: 100%;
+  }
+
+  .reel-card video {
+    width: 100%;
+    height: auto;
   }
 
   .service-card {
