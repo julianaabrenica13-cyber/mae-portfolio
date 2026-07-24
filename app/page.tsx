@@ -9,7 +9,6 @@ import {
   PenTool,
   Play,
   Presentation,
-  Sheet,
   Sparkles,
   Wand2,
 } from "lucide-react";
@@ -186,10 +185,10 @@ const services = [
       "Clean business documents, proposals, reports, letters, templates, formatting, and content polishing.",
   },
   {
-    icon: Sheet,
-    title: "Excel Assistance",
+    icon: Clapperboard,
+    title: "Video Editing",
     description:
-      "Organized trackers, simple dashboards, tables, formulas, data cleanup, schedules, and business lists.",
+      "Engaging short-form videos, social media content, clean cuts, captions, transitions, sound effects, color adjustments, and polished edits ready to post.",
   },
   {
     icon: Presentation,
@@ -208,7 +207,7 @@ const services = [
 const process = [
   "Clarify the task, audience, format, and deadline.",
   "Generate directions with AI, then select the strongest route.",
-  "Build the final asset in Canva, Word, Excel, or slides.",
+  "Create polished video edits and visual content ready to share across social media and digital platforms.",
   "Polish details so the file is ready to send, post, or present.",
 ];
 
