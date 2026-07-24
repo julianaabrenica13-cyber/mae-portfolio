@@ -10,5 +10,6 @@ yarn-debug.log*
 yarn-error.log*
 .vercel
 .tools
+tsconfig.tsbuildinfo
 Thumbs.db
 .DS_Store

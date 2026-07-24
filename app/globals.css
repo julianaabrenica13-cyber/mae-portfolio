@@ -406,11 +406,20 @@ p {
   display: block;
 }
 
-.video-badge {
+.video-badges {
   position: absolute;
   top: 12px;
   left: 12px;
+  right: 12px;
   z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.video-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -422,8 +431,26 @@ p {
   font-weight: 900;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  pointer-events: none;
   backdrop-filter: blur(8px);
+}
+
+.ai-badge {
+  background: rgba(124, 58, 237, 0.85);
+}
+
+.editing-badge {
+  background: rgba(13, 148, 136, 0.85);
+}
+
+.video-frame.portrait .video-badge {
+  padding: 4px 8px;
+  font-size: 0.6rem;
+  gap: 4px;
+}
+
+.video-frame.portrait .video-badge svg {
+  width: 10px;
+  height: 10px;
 }
 
 .reel-section {

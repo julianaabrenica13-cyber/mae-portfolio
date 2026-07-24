@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   Bot,
   BriefcaseBusiness,
+  Clapperboard,
   FileText,
   Mail,
   PenTool,
@@ -54,6 +55,7 @@ const reels = [
     poster: "/work/tumbler-reel-poster.jpg",
     width: 1280,
     height: 720,
+    aiGenerated: true,
   },
   {
     title: "Skincare UGC Ad",
@@ -62,6 +64,31 @@ const reels = [
     poster: "/work/ugc-ad-poster.jpg",
     width: 720,
     height: 1280,
+    aiGenerated: true,
+  },
+  {
+    title: "Short-Form Reel 3",
+    kind: "Short-form video",
+    src: "/work/third-reel.mp4",
+    width: 720,
+    height: 1280,
+    videoEditing: true,
+  },
+  {
+    title: "Short-Form Reel 4",
+    kind: "Short-form video",
+    src: "/work/second-reel.mp4",
+    width: 720,
+    height: 1280,
+    videoEditing: true,
+  },
+  {
+    title: "Short-Form Reel 5",
+    kind: "Short-form video",
+    src: "/work/new-reel.mp4",
+    width: 720,
+    height: 1280,
+    videoEditing: true,
   },
 ];
 
@@ -204,7 +231,7 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow">
             <Sparkles size={16} aria-hidden="true" />
-            AI content, design, and document support
+            AI content, design, video editing, and document support
           </p>
           <h1>Juliana Abrenica</h1>
           <p className="hero-copy">
@@ -233,7 +260,9 @@ export default function Home() {
         <div className="reel-row">
           {reels.map((reel) => (
             <article className="reel-card" key={reel.title}>
-              <div className="video-frame">
+              <div
+                className={`video-frame${reel.width < reel.height ? " portrait" : ""}`}
+              >
                 <video
                   src={reel.src}
                   poster={reel.poster}
@@ -242,10 +271,24 @@ export default function Home() {
                   preload="metadata"
                   style={{ aspectRatio: `${reel.width} / ${reel.height}` }}
                 />
-                <span className="video-badge">
-                  <Play size={12} aria-hidden="true" />
-                  Video
-                </span>
+                <div className="video-badges">
+                  <span className="video-badge">
+                    <Play size={12} aria-hidden="true" />
+                    Video
+                  </span>
+                  {reel.aiGenerated && (
+                    <span className="video-badge ai-badge">
+                      <Sparkles size={12} aria-hidden="true" />
+                      AI Generated
+                    </span>
+                  )}
+                  {reel.videoEditing && (
+                    <span className="video-badge editing-badge">
+                      <Clapperboard size={12} aria-hidden="true" />
+                      Video Editing Projects
+                    </span>
+                  )}
+                </div>
               </div>
               <div className="work-meta">
                 <p>{reel.kind}</p>
