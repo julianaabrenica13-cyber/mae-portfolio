@@ -145,6 +145,11 @@ h2 {
   font-size: clamp(1.75rem, 4vw, 3.4rem);
 }
 
+.work-section .section-heading h2,
+.showcase-section .section-heading h2 {
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+}
+
 h3 {
   margin: 0;
   font-size: 0.94rem;
