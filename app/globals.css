@@ -95,14 +95,6 @@ nav {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(23, 21, 20, 0.85) 0%,
-      rgba(23, 21, 20, 0.62) 30%,
-      rgba(23, 21, 20, 0.14) 54%,
-      rgba(23, 21, 20, 0) 72%
-    );
 }
 
 .hero-content {
@@ -204,7 +196,8 @@ p {
 }
 
 .view-work-button {
-  background: #c1aa8a;
+  background: #c1aa89;
+  color: #fdf7f1;
 }
 
 .button.secondary {
@@ -621,16 +614,6 @@ footer p {
   .hero {
     min-height: 86svh;
     padding: 104px 18px 54px;
-  }
-
-  .hero-scrim {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(23, 21, 20, 0.88) 0%,
-        rgba(23, 21, 20, 0.6) 48%,
-        rgba(23, 21, 20, 0.32) 100%
-      );
   }
 
   .hero-actions,
