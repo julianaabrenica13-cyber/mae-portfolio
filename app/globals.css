@@ -80,9 +80,9 @@ nav {
   position: relative;
   min-height: 88svh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
-  padding: 132px clamp(20px, 5vw, 72px) 78px;
+  padding: 96px clamp(20px, 5vw, 72px) 78px;
   color: var(--white);
 }
 
@@ -159,8 +159,13 @@ p {
 .hero-copy {
   width: min(660px, 100%);
   margin: 22px 0 0;
-  font-size: clamp(0.9rem, 1.4vw, 1.08rem);
-  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-dm-sans), Arial, sans-serif;
+  font-size: clamp(0.9rem, 1.25vw, 1.05rem);
+  color: #4c4641;
+}
+
+.hero h1 {
+  color: #4c4641;
 }
 
 .hero-actions {
@@ -195,8 +200,8 @@ p {
   color: var(--white);
 }
 
-.view-work-button {
-  background: #c1aa89;
+.button.primary.view-work-button {
+  background: #c1aa8b;
   color: #fdf7f1;
 }
 
