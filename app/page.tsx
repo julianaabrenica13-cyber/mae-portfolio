@@ -67,7 +67,7 @@ const reels = [
     aiGenerated: true,
   },
   {
-    title: "Short-Form Reel 3",
+    title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/third-reel.mp4",
     width: 720,
@@ -75,7 +75,7 @@ const reels = [
     videoEditing: true,
   },
   {
-    title: "Short-Form Reel 4",
+    title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/second-reel.mp4",
     width: 720,
@@ -83,7 +83,7 @@ const reels = [
     videoEditing: true,
   },
   {
-    title: "Short-Form Reel 5",
+    title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/new-reel.mp4",
     width: 720,
@@ -91,7 +91,7 @@ const reels = [
     videoEditing: true,
   },
   {
-    title: "Short-Form Reel 6",
+    title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/fourth-reel.mp4",
     width: 720,
@@ -243,12 +243,13 @@ export default function Home() {
           </p>
           <h1>Juliana Abrenica</h1>
           <p className="hero-copy">
-            I help companies turn rough ideas into polished AI-assisted content,
-            Canva visuals, Word documents, Excel trackers, and presentation-ready
-            business materials.
+            I turn ideas into eye-catching designs and engaging video content
+            that capture attention and communicate clearly. My work focuses on
+            video editing, graphic design, and polished digital materials that
+            bring creative concepts to life.
           </p>
           <div className="hero-actions" aria-label="Primary links">
-            <a href="#work" className="button primary">
+            <a href="#work" className="button primary view-work-button">
               View Work
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
@@ -267,7 +268,7 @@ export default function Home() {
         </div>
         <div className="reel-row">
           {reels.map((reel) => (
-            <article className="reel-card" key={reel.title}>
+            <article className="reel-card" key={reel.src}>
               <div
                 className={`video-frame${reel.width < reel.height ? " portrait" : ""}`}
               >
@@ -311,12 +312,13 @@ export default function Home() {
         <div className="intro-grid">
           <div>
             <p className="section-kicker">What I do</p>
-            <h2>Practical AI generation for business teams that need finished files.</h2>
+            <h2>Creative video editing, graphic design, and content concepts that turn ideas into polished, engaging, and ready-to-use digital content.</h2>
           </div>
           <p>
-            I work where creative output meets everyday operations: social content,
-            campaign visuals, documents, spreadsheets, slide decks, and organized
-            business materials that teams can use immediately.
+            I create engaging video content, eye-catching graphics, and creative
+            visuals that bring ideas to life. From social media content and
+            campaign designs to presentations and polished business materials,
+            every project is made to look clear, professional, and ready to use.
           </p>
         </div>
       </section>
@@ -324,7 +326,7 @@ export default function Home() {
       <section className="section" id="services">
         <div className="section-heading">
           <p className="section-kicker">Services</p>
-          <h2>AI-powered support across the tools companies already use.</h2>
+          <h2 className="services-heading">AI-powered support across the tools companies already use.</h2>
         </div>
         <div className="service-grid">
           {services.map((service) => {

@@ -203,11 +203,14 @@ p {
   color: var(--white);
 }
 
+.view-work-button {
+  background: #c1aa8a;
+}
+
 .button.secondary {
-  border: 1px solid rgba(255, 255, 255, 0.54);
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--white);
-  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .intro-band {
@@ -226,7 +229,11 @@ p {
 }
 
 .intro-grid h2 {
-  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+}
+
+.services-heading {
+  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
 }
 
 .intro-grid p:last-child {
