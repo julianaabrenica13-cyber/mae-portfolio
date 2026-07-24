@@ -207,6 +207,11 @@ p {
   color: #fdf7f1;
 }
 
+.button.primary.start-project-button {
+  background: #e9d9cc;
+  color: #4c4641;
+}
+
 .button.secondary {
   border: 1px solid var(--line);
   background: #e9d9cc;
@@ -375,6 +380,7 @@ p {
 
 .work-meta {
   padding: 18px;
+  background: #e9d9cc;
 }
 
 .work-meta p {
@@ -535,7 +541,7 @@ p {
 }
 
 .process-list span {
-  color: var(--coral);
+  color: #987e6d;
   font-weight: 900;
 }
 
@@ -545,7 +551,7 @@ p {
   justify-content: space-between;
   gap: 28px;
   padding: clamp(54px, 9vw, 98px) clamp(20px, 5vw, 72px);
-  background: var(--ink);
+  background: #987e6d;
   color: var(--white);
 }
 
@@ -554,7 +560,7 @@ p {
 }
 
 .contact .section-kicker {
-  color: var(--lemon);
+  color: #fdf7ed;
 }
 
 .contact h2 {

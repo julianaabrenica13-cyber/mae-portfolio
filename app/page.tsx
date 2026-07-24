@@ -442,7 +442,10 @@ export default function Home() {
             useful assets your team can post, send, track, or present.
           </p>
         </div>
-        <a href="mailto:julianaabrenica13@gmail.com" className="button primary">
+        <a
+          href="mailto:julianaabrenica13@gmail.com"
+          className="button primary start-project-button"
+        >
           <Mail size={18} aria-hidden="true" />
           Start a Project
         </a>
