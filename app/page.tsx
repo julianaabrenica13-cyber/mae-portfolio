@@ -90,6 +90,14 @@ const reels = [
     height: 1280,
     videoEditing: true,
   },
+  {
+    title: "Short-Form Reel 6",
+    kind: "Short-form video",
+    src: "/work/fourth-reel.mp4",
+    width: 720,
+    height: 1280,
+    videoEditing: true,
+  },
 ];
 
 const showcaseItems = [
