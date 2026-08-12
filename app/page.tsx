@@ -74,6 +74,22 @@ const reels = [
     aiGenerated: true,
   },
   {
+    title: "Podcast Clip",
+    kind: "Short-form video",
+    src: "/work/podcast-reel.mp4",
+    width: 1280,
+    height: 720,
+    aiGenerated: true,
+  },
+  {
+    title: "Games Promo",
+    kind: "Short-form video",
+    src: "/work/games-reel.mp4",
+    width: 864,
+    height: 480,
+    aiGenerated: true,
+  },
+  {
     title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/third-reel.mp4",
