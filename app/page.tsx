@@ -12,37 +12,50 @@ import {
   Sparkles,
   Wand2,
 } from "lucide-react";
+import WorkCarousel from "./work-carousel";
 
 const workItems = [
   {
     title: "Launch Banner",
     kind: "Campaign visual",
     image: "/work/actual-banner.png",
+    width: 1774,
+    height: 887,
   },
   {
     title: "Store Banner",
     kind: "Retail display",
     image: "/work/store-banner.png",
+    width: 1659,
+    height: 948,
   },
   {
     title: "Instagram Post",
     kind: "Social content",
     image: "/work/ig-post.png",
+    width: 1254,
+    height: 1254,
   },
   {
     title: "Facebook Ad",
     kind: "Paid media",
     image: "/work/fb-ads.png",
+    width: 1254,
+    height: 1254,
   },
   {
     title: "Menu Design",
     kind: "Brand collateral",
     image: "/work/menu.png",
+    width: 1053,
+    height: 1493,
   },
   {
     title: "Packaging",
     kind: "Product mockup",
     image: "/work/packaging.png",
+    width: 1448,
+    height: 1086,
   },
 ];
 
@@ -123,13 +136,14 @@ const reels = [
   },
 ];
 
-const showcaseItems = [
+const youtubeThumbnails = [
   {
     title: "Start YouTube With $0",
     kind: "YouTube thumbnail",
     image: "/work/yt-start-youtube.png",
     width: 1672,
     height: 941,
+    alt: "Start YouTube With $0 — YouTube thumbnail",
   },
   {
     title: "He Can't Say No!",
@@ -137,13 +151,23 @@ const showcaseItems = [
     image: "/work/yt-cant-say-no.png",
     width: 1536,
     height: 1024,
+    alt: "He Can't Say No! — YouTube thumbnail",
   },
   {
-    title: "Italian Café Menu",
-    kind: "Menu design",
-    image: "/work/italian-menu.png",
-    width: 1024,
-    height: 1536,
+    title: "1 Day, $1 Challenge",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-1day-1dollar.png",
+    width: 1672,
+    height: 941,
+    alt: "1 Day, $1 Challenge — YouTube thumbnail",
+  },
+  {
+    title: "First Words!",
+    kind: "YouTube thumbnail",
+    image: "/work/yt-first-words.png",
+    width: 1672,
+    height: 941,
+    alt: "First Words! — YouTube thumbnail",
   },
   {
     title: "Pilates: Glutes & Core",
@@ -151,6 +175,17 @@ const showcaseItems = [
     image: "/work/yt-pilates.png",
     width: 1672,
     height: 941,
+    alt: "Pilates: Glutes & Core — YouTube thumbnail",
+  },
+];
+
+const showcaseItems = [
+  {
+    title: "Italian Café Menu",
+    kind: "Menu design",
+    image: "/work/italian-menu.png",
+    width: 1024,
+    height: 1536,
   },
   {
     title: "1st Birthday Invite",
@@ -160,25 +195,11 @@ const showcaseItems = [
     height: 1672,
   },
   {
-    title: "First Words!",
-    kind: "YouTube thumbnail",
-    image: "/work/yt-first-words.png",
-    width: 1672,
-    height: 941,
-  },
-  {
     title: "iPhone 17 Pro Max",
     kind: "Product poster",
     image: "/work/iphone-poster.png",
     width: 1055,
     height: 1491,
-  },
-  {
-    title: "1 Day, $1 Challenge",
-    kind: "YouTube thumbnail",
-    image: "/work/yt-1day-1dollar.png",
-    width: 1672,
-    height: 941,
   },
   {
     title: "Plumbing Services Flyer",
@@ -393,7 +414,7 @@ export default function Home() {
             alt="Instagram post displayed on a phone mockup"
             width={900}
             height={900}
-            sizes="(max-width: 900px) 100vw, 46vw"
+            sizes="(max-width: 980px) 380px, 380px"
             draggable={false}
           />
         </div>
@@ -404,24 +425,7 @@ export default function Home() {
           <p className="section-kicker">Selected work</p>
           <h2>Campaign pieces, brand touchpoints, and business-ready files.</h2>
         </div>
-        <div className="work-grid">
-          {workItems.map((item) => (
-            <article className="work-card" key={item.title}>
-              <Image
-                src={item.image}
-                alt={`${item.title} sample`}
-                width={900}
-                height={700}
-                sizes="(max-width: 760px) 100vw, (max-width: 1120px) 50vw, 33vw"
-                draggable={false}
-              />
-              <div className="work-meta">
-                <p>{item.kind}</p>
-                <h3>{item.title}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
+        <WorkCarousel items={workItems} />
       </section>
 
       <section className="section showcase-section" id="more-work">
@@ -429,6 +433,11 @@ export default function Home() {
           <p className="section-kicker">More work</p>
           <h2>Thumbnails, posters, menus, and short-form video.</h2>
         </div>
+        <h3 className="subsection-heading">Thumbnails work</h3>
+        <WorkCarousel
+          items={youtubeThumbnails}
+          label="YouTube thumbnail carousel"
+        />
         <div className="showcase-grid">
           {showcaseItems.map((item) => (
             <article className="work-card showcase-card" key={item.title}>

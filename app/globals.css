@@ -304,25 +304,26 @@ p {
 
 .case-study {
   display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(320px, 0.78fr);
-  gap: clamp(32px, 6vw, 86px);
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.6fr);
+  gap: clamp(24px, 4vw, 56px);
   align-items: center;
-  padding: clamp(70px, 10vw, 126px) clamp(20px, 5vw, 72px);
+  padding: clamp(20px, 2.4vw, 32px) clamp(20px, 5vw, 72px);
   background: #987e6d;
   color: var(--white);
 }
 
 .case-copy {
-  max-width: 720px;
+  max-width: 600px;
 }
 
 .case-copy .section-kicker {
+  margin-bottom: 8px;
   color: #fdf7f1;
   font-size: 0.95rem;
 }
 
 .case-copy h2 {
-  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.55rem, 2.9vw, 2.4rem);
 }
 
 .reel-section .section-kicker,
@@ -341,28 +342,32 @@ p {
 
 .case-copy p:not(.section-kicker) {
   max-width: 620px;
+  margin: 10px 0 0;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 0.96rem;
+  font-size: 1.02rem;
+  line-height: 1.5;
 }
 
 .case-points {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
+  gap: 8px;
+  margin-top: 14px;
 }
 
 .case-points span {
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  padding: 10px 13px;
+  padding: 9px 13px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 800;
 }
 
 .case-media img {
   width: 100%;
+  max-width: 380px;
+  margin-left: auto;
   height: auto;
   border-radius: 8px;
   box-shadow: var(--shadow);
@@ -372,13 +377,87 @@ p {
   max-width: 1440px;
 }
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.work-carousel {
+  position: relative;
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 18px;
+  margin: -8px 0 18px;
+}
+
+.carousel-counter {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.carousel-counter span {
+  color: #987e6d;
+}
+
+.carousel-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: #987e6d;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--white);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.work-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
+}
+
+.work-track:active {
+  cursor: grabbing;
+}
+
+.work-track::-webkit-scrollbar {
+  display: none;
+}
+
+.work-slide {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  padding: 0 6px;
 }
 
 .work-card {
+  width: 100%;
+  max-width: 720px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -387,8 +466,9 @@ p {
 
 .work-card img {
   width: 100%;
-  aspect-ratio: 1.18;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .work-meta {
@@ -407,6 +487,30 @@ p {
 .showcase-section {
   max-width: 1440px;
   border-top: 1px solid var(--line);
+}
+
+.subsection-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  color: #987e6d;
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.subsection-heading::after {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  content: "";
+}
+
+.showcase-section .work-carousel {
+  margin-bottom: 28px;
 }
 
 .showcase-grid {
@@ -616,8 +720,12 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .service-grid,
-  .work-grid {
+  .case-media img {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -661,13 +769,16 @@ footer p {
     width: 100%;
   }
 
-  .service-grid,
-  .work-grid {
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
   .showcase-grid {
     columns: 1;
+  }
+
+  .work-card {
+    max-width: 92vw;
   }
 
   .reel-card {
