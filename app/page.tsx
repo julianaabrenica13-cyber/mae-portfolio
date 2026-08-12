@@ -66,6 +66,14 @@ const reels = [
     aiGenerated: true,
   },
   {
+    title: "Pet Hair Remover Ad",
+    kind: "Short-form video",
+    src: "/work/pet-hair-remover.mp4",
+    width: 720,
+    height: 1280,
+    aiGenerated: true,
+  },
+  {
     title: "Social Media Reel",
     kind: "Short-form video",
     src: "/work/third-reel.mp4",
