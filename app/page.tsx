@@ -257,6 +257,7 @@ export default function Home() {
           priority
           sizes="100vw"
           className="hero-image"
+          draggable={false}
         />
         <div className="hero-scrim" />
         <div className="hero-content">
@@ -299,6 +300,9 @@ export default function Home() {
                   src={reel.src}
                   poster={reel.poster}
                   controls
+                  controlsList="nodownload noplaybackrate noremoteplayback"
+                  disablePictureInPicture
+                  disableRemotePlayback
                   playsInline
                   preload="metadata"
                   style={{ aspectRatio: `${reel.width} / ${reel.height}` }}
@@ -349,7 +353,7 @@ export default function Home() {
       <section className="section" id="services">
         <div className="section-heading">
           <p className="section-kicker">Services</p>
-          <h2 className="services-heading">AI-powered support across the tools companies already use.</h2>
+          <h2 className="services-heading">Creative video editing and visual design that bring ideas to life.</h2>
         </div>
         <div className="service-grid">
           {services.map((service) => {
@@ -390,6 +394,7 @@ export default function Home() {
             width={900}
             height={900}
             sizes="(max-width: 900px) 100vw, 46vw"
+            draggable={false}
           />
         </div>
       </section>
@@ -408,6 +413,7 @@ export default function Home() {
                 width={900}
                 height={700}
                 sizes="(max-width: 760px) 100vw, (max-width: 1120px) 50vw, 33vw"
+                draggable={false}
               />
               <div className="work-meta">
                 <p>{item.kind}</p>
@@ -432,6 +438,7 @@ export default function Home() {
                 width={item.width}
                 height={item.height}
                 sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+                draggable={false}
               />
               <div className="work-meta">
                 <p>{item.kind}</p>

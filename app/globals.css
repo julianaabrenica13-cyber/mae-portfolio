@@ -37,6 +37,14 @@ img {
   max-width: 100%;
 }
 
+img,
+video {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .site-header {
   position: fixed;
   top: 0;
